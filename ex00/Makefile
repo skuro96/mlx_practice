@@ -1,3 +1,9 @@
+CC		= gcc
+INCLUDE = -I../minilibx
+
+CFLAGS	= -Wall -Wextra -Werror $(INCLUDE)
+MLXFLAGS = -L../minilibx -lmlx -framework OpenGL -framework AppKit
+
 all:
-	gcc -I../minilibx -L../minilibx -lmlx -framework OpenGL -framework AppKit main.c
+	$(CC) $(CFLAGS) $(INCLUDE) $(MLXFLAGS) main.c
 	./a.out
